@@ -195,7 +195,7 @@ class AlphaBetaAgent(MultiAgentSearchAgent):
                     max_value = new_max
                     best_action = action
                 if max_value > beta:
-                    return [max_value]
+                    return [max_value, best_action]
                 alpha = max(alpha, max_value)
             return [max_value, best_action]
 
@@ -218,7 +218,7 @@ class AlphaBetaAgent(MultiAgentSearchAgent):
                     min_value = new_min
                     best_action = action
                 if min_value < alpha:
-                    return [min_value]
+                    return [min_value, best_action]
                 beta = min(beta, min_value)
 
             return [min_value, best_action]
